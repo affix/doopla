@@ -1,0 +1,6 @@
+https://example.com/test.php?u=hello
+https://example.com/test.php?u=world
+https://example.com/test.php?u=hello&p=world
+https://example.com/test.png
+https://example.com/test.php?u=hello&p=doopla
+https://example.com/test/this/is/12345-a-blog-post
