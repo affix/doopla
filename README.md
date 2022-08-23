@@ -1,7 +1,7 @@
 Doopla
 ======
 
-Using a URL list for security testing can be painful as there are a lot of URLs that have uninteresting/duplicate content; doopla aims to make your life easier.
+Using a URL list for security testing can be painful as there are a lot of URLs that have uninteresting/duplicate content, doopla aims to make your life easier.
 
 Doopla cleans up :
 
@@ -10,6 +10,12 @@ Doopla cleans up :
 * Removal of static content
 
 Doopla is simple, It doesn't connect or verify your URLs.
+
+installation :
+
+```
+$ go get -u github.com/affix/doopla
+```
 
 usage :
 
