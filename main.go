@@ -32,8 +32,9 @@ func parseQueryString(splitQuery []string) []string {
 	if len(splitQuery) > 1 {
 		i := 0
 		for i < len(splitQuery) {
-			queryParams = append(queryParams, strings.TrimSpace(splitQuery[i])+"=TEST")
-			i = i + 2
+			splitParam := strings.Split(splitQuery[i], "=")
+			queryParams = append(queryParams, strings.TrimSpace(splitParam[0])+"=TEST")
+			i = i + 1
 		}
 	} else {
 		queryParams = append(queryParams, strings.Join(splitQuery, ""))
@@ -70,10 +71,9 @@ func main() {
 		u, err := url.Parse(txt)
 		if err == nil {
 			queryString := u.RawQuery
-			splitQuery := strings.Split(queryString, "=")
+			splitQuery := strings.Split(queryString, "&")
 
-			var queryParams []string
-			queryParams = parseQueryString(splitQuery)
+			queryParams := parseQueryString(splitQuery)
 			if !isStaticContent(u) && !isUserContent(u) {
 				testQueryString := u.Path + strings.Join(queryParams, "&")
 				if !Contains(seenQueryStrings, testQueryString) {
